@@ -12,7 +12,7 @@ function registrerBillettene(){
     }
     ut+="</table>";
     //if setning?
-    document.getElementById("alleBillettene").innerHTML=ut; //skriver ut arrayet på siden
+    document.getElementById("alleBillettene").innerHTML=ut;
 }
 function registrer(){
     const velgfilm = document.getElementById("velgfilm").value;
@@ -28,7 +28,7 @@ function registrer(){
         bol=false;
         document.getElementById("feilVelgFilm").innerHTML="Du må velge en film.";
     }else{
-        document.getElementById("feilVelgFilm").innerHTML="";//nullstiller span
+        document.getElementById("feilVelgFilm").innerHTML="";
     }
 
     if (isNaN(antall) || !antall) {
@@ -72,14 +72,13 @@ function registrer(){
         epost : epost
     };
     if (bol){
-        alleBillettene.push(billett); //legger input i arrayet "billett"
+        alleBillettene.push(billett);
     }
-
     registrerBillettene()
     tom();
 }
 function tom(){
-    document.getElementById("velgfilm").value="Velg film her"; //nullstiller input
+    document.getElementById("velgfilm").value="Velg film her";
     document.getElementById("antall").value="";
     document.getElementById("fornavn").value="";
     document.getElementById("etternavn").value="";
@@ -91,9 +90,4 @@ function slett(){
     alleBillettene.length=0;
     document.getElementById("alleBillettene").innerHTML = "";
     tom();
-
 }
-
-//mangler: ikke lagre noe data når det er feilmeldinger
-//er det mulig å forkorte koden
-//hvordan få opp "Velg film her" som label for dropdown menu for valg av film
